@@ -21,9 +21,9 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // 这里可以添加表单提交逻辑
-    console.log("表单提交:", formData)
-    // 重置表单
+    // Form submission logic can be added here
+    console.log("Form submitted:", formData)
+    // Reset form
     setFormData({ name: "", email: "", subject: "", message: "" })
   }
 
@@ -76,7 +76,7 @@ export function ContactSection() {
     {
       id: "wechat",
       icon: MessageCircle,
-      label: "微信",
+      label: "WeChat",
       href: "javascript:void(0)",
       color: "hover:text-green-400"
     }
@@ -95,7 +95,7 @@ export function ContactSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* 联系信息 */}
+          {/* Contact Information */}
           <div className="space-y-8">
             <div className="animate-fade-in">
               <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
@@ -112,7 +112,7 @@ export function ContactSection() {
               </Badge>
             </div>
 
-            {/* 联系方式 */}
+            {/* Contact Methods */}
             <div className="space-y-6">
               {contactInfo.map((item, index) => {
                 const Icon = item.icon
@@ -139,16 +139,16 @@ export function ContactSection() {
               })}
             </div>
 
-            {/* 社交媒体 */}
+            {/* Social Media */}
             <div className="pt-8 border-t border-gray-200 dark:border-zinc-800">
-              <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4">关注我</h4>
+              <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon
                   const handleClick = (e: React.MouseEvent) => {
                     if (social.id === 'wechat') {
                       e.preventDefault()
-                      alert('微信号：zqi4869')
+                      alert('WeChat ID: zqi4869')
                     }
                   }
                   return (
@@ -170,7 +170,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* 联系表单 */}
+          {/* Contact Form */}
           <Card className="bg-white/50 dark:bg-zinc-800/50 border-gray-200 dark:border-zinc-700 animate-slide-up">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
